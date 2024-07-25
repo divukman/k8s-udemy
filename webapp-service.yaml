@@ -7,8 +7,9 @@ spec:
   # This defines which pods are going to be represented by this service
   # The service becomes a network endpoint for either other services or
   # maybe external users to connect to (browser)
-  selector: 
+  selector:
     mylabelname: webapp
+    release: "0-5"
 
   ports:
     - name: http
