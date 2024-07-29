@@ -18,3 +18,20 @@ spec:
       nodePort: 30080
 
   type: NodePort 
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+   name: fleetman-queue
+
+spec:
+  selector:
+    app: queue
+
+  ports:
+    - name: activemq
+      port: 8161
+      nodePort: 30010
+
+  type: NodePort
