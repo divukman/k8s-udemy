@@ -8,8 +8,7 @@ spec:
   # The service becomes a network endpoint for either other services or
   # maybe external users to connect to (browser)
   selector:
-    mylabelname: webapp
-    release: "0-5"
+    app: webapp
 
   ports:
     - name: http
