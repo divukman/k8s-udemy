@@ -2,35 +2,30 @@ apiVersion: v1
 kind: Service
 metadata:
    name: fleetman-webapp
-
 spec:
   # This defines which pods are going to be represented by this service
   # The service becomes a network endpoint for either other services or
   # maybe external users to connect to (browser)
   selector:
     app: webapp
-
   ports:
     - name: http
       port: 80
       targetPort: 80
       nodePort: 30080
-
-  type: NodePort 
-
+  type: NodePort
 ---
 apiVersion: v1
 kind: Service
 metadata:
    name: fleetman-queue
-
 spec:
   selector:
     app: queue
-
   ports:
     - name: activemq
       port: 8161
       nodePort: 30010
-
+    - name: endpoint
+      port: 61616
   type: NodePort
